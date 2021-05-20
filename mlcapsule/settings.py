@@ -29,10 +29,9 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kr=($tqyb-n9m0eg1%2=2%9@lgz_)fn9yp!y$*)2&ua&x+&s61'
-
+SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['*',]
 SECURE_SSL_REDIRECT = True
@@ -93,14 +92,9 @@ WSGI_APPLICATION = 'mlcapsule.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mlcapsule',
-        'USER': 'postgres',
-        'PASSWORD': 'postgresqllince2108',
-        'HOST':'127.0.0.1',
-        'PORT':'5432'
-    }
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
 }
 
 
