@@ -28,13 +28,12 @@ SECRET_KEY = 'kr=($tqyb-n9m0eg1%2=2%9@lgz_)fn9yp!y$*)2&ua&x+&s61'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*',]
-SECURE_SSL_REDIRECT = True
-SECURE_SSL_REDIRECT = False
+
 
 # Application definition
 
 INSTALLED_APPS = [
-    'sslserver',#user defined setting
+    
     
     'djangosecure', #user defined setting
     'django.contrib.admin',
