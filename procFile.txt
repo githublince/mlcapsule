@@ -1,1 +1,1 @@
-web: gunicorn mlcapsules.wsgi
+web: gunicorn mlcapsule.wsgi
