@@ -1,1 +1,1 @@
-web: gunicorn mlcapsule.wsgi
+web: python manage.py collectstatic --no- input; gunicorn mlcapsule.wsgi --logfile - --log-level debug
