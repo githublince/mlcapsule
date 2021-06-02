@@ -24,18 +24,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'kr=($tqyb-n9m0eg1%2=2%9@lgz_)fn9yp!y$*)2&ua&x+&s61'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*','heroku.com']
-SECURE_SSL_REDIRECT = True
-SECURE_SSL_REDIRECT = False
+ALLOWED_HOSTS = ['*','mlcapsules.herokuapp.com']
+
 
 # Application definition
 
 INSTALLED_APPS = [
-    'sslserver',#user defined setting
-    
-    'djangosecure', #user defined setting
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,8 +47,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-     'whitenoise.middleware.WhiteNoiseMiddleware',
+     
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
