@@ -19,6 +19,6 @@ from django.urls import path
 from django.conf.urls import include # important user addition
 
 urlpatterns = [
-    path('', include('cake.urls')),
+    path('/', include('cake.urls')),
     path('admin/', admin.site.urls),
 ]
