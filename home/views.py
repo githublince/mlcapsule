@@ -338,7 +338,10 @@ def editusercapsule(request):
  
 
 def addusercapsule(request):
+    from os import listdir
+    print(os.listdir())
 # connecting to database
+
     if request.method == 'POST': #login page
         print(request.POST)
 
